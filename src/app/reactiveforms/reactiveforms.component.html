@@ -1,0 +1,48 @@
+ <div class="container-fluid border">
+    <div class="row">
+        <div class="col-10 border mx-auto">Reactiveforms
+            <form [formGroup]="sampleReactiveFrm">
+                <div class="form-group">
+                  
+                <label for="uname">username</label>
+                <input type="text" id="uname" class="form-control" formControlName="username">
+                
+              
+                </div>
+                <div class="form-group">
+                    <label for="u_pwd">password</label>
+                    <input type="text" id="u_pwd" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="u_C_pwd">confirmpassword</label>
+                    <input type="text" id="u_C_pwd" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="u_zip">zip code</label>
+                    <input type="text" id="u_zip" class="form-control">
+                </div>
+                <button class="btn btn-primary">submit</button>
+                <br><br>
+                <hr>
+                <div class="validations" *ngIf="sampleReactiveFrm.touched">
+                     <span *ngIf="sampleReactiveFrm.controls ['username'].invalid"><i class="fa fa-times-circle" style="color: firebrick;"></i> username should minimum 3 charecters</span>
+                   <span *ngIf="sampleReactiveFrm.controls ['passwordconfirmpassword'].invalid"><i class="fa fa-times-circle" style="color: firebrick;"></i> password and confirmpassword should be match and minum 6 characters</span>
+                  <span *ngIf="sampleReactiveFrm.controls ['zipcode'].invalid"><i class="fa fa-times-circle" style="color: firebrick;"></i> zip code should be 6 charters</span> 
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div> 
+<form class="formGroup">
+<div class="form-group">
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+</div>
+<div class="form-group">
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+    </div>
+    <button class="btn btn-primary">submit</button>
+  
+  </form>
